@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang=""ja">
+    <meta charset="UTF-8">
+<head>
+    <title>用語まとめ</title>
+</head>
+<body>
+    <h1>HTML用語まとめ</h1>
+    <p>HTMLについてでぼくがここまでで学んだことをまとめました。<br>
+    ぼくのノートをそのままHTMLでまとめただけです。
+    </p>
+
+    <h2 id="もくじ">もくじ</h2>
+    <a href="#1">１，要素と属性</a><br>
+    <a href="#2">２．文字コード</a><br>
+    <a href="#3">３．カテゴリとコンテンツモデル</a><br>
+    <a href="#4">４．特殊な記述の文字</a><br>
+    <a href="#5">５．強調と重要</a><br>
+    <a href="#6">６．箇条書き</a><br>
+    <a href="#7">７．用語説明リスト</a><br>
+    <a href="#8">８．絶対パスと相対パス</a><br>
+    <a href="#9">９．ハイパーリンク</a><br>
+    <a href="#10">１０．画像</a><br>
+    <a href="#11">１１．表</a><br>
+    <a href="#12">１２．フォーム</a><br>
+
+
+
+    <h2 id="1">要素と属性</h2>
+    <dl>
+        <dt>要素</dt>
+        <dd>今何を書いているのか（ページの情報なのか、見出しなのか、段落なのかなど）を宣言するのが要素。</dd>
+        <dt>属性</dt>
+        <dd>要素の細かい種類を宣言するのが属性。<br>
+        例えば、要素でページの情報を書くことを宣言して、その中の言語についてを書き、言語は日本語であることを宣言するときは、<br>
+        &lt;meta&nbsp;lang="ja"&gt;<br>
+        meta…ページのメタ情報、lang…言語、ja…日本語</dd>
+    </dl>
+
+    <h2 id="2">文字コード</h2>
+    <p>どの文字がどの番号と対応しているかを記述したのが文字コード
+        文字コードによって対応している文字が違うため、初めに宣言しておかなければ文字化けしてしまう。
+        <br>&lt;meta&nbsp;charset="文字コード名"&gt;で宣言できる。
+    </p>
+
+    <h2 id="3">カテゴリとコンテンツモデル</h2>
+    <p>要素は７つのカテゴリに分類される。
+        また、それぞれの要素にコンテンツモデルがある。<br>
+        &lt;???&gt;~&lt;###&gt;~&lt;/###&gt;&lt;/???&gt;<br>
+        と書きたい場合、&lt;???>のコンテンツモデルに含まれるカテゴリ内の要素しか&lt;###&gt;のところに書けない。
+    </p>
+    <p>
+        <a href="https://www.tohoho-web.com/www.htm">とほほのWWW入門</a>ではコンテンツモデルのことを子要素と記述してある。
+    </p>
+
+    <h2 id="4">特殊な記述の文字</h2>
+    <p>&lt;や&amp;などのもじをブラウザに表示したいときは、&〇〇;と記述する。</p>
+    <h3>よく使うもの一覧</h3>
+    <dl>
+        <dt>&amp;</dt>
+        <dd>＆amp;</dd>
+        <dt>&lt;</dt>
+        <dd>＆lt;</dd>
+        <dt>&gt;</dt>
+        <dd>＆gt;</dd>
+        <dt>スペース</dt>
+        <dd>＆nbsp;</dd>
+        <p>
+        など<br>
+        ごく一部しか書いてないので、知りたい人は他のサイトに行こう！<br>
+        ※そのまま入力すると出力できないので、上の記述は&amp;が全角になっています。
+        </p>
+    </dl>
+
+    <h2 id="5">強調と重要</h2>
+    <dl>
+        <dt>&lt;em&gt;</dt>
+        <dd>
+            強調すべき箇所につける。そのまま出力すると斜体になる。<br>
+            付ける場所によって文の意味やニュアンスが変わる。<br>
+            例１：&lt;em&gt;僕は&lt;/em&gt;100点をとった。<br>
+            この場合、「僕は」なので他の人はとれなかったのだろうという背景が読み取れる。<br>
+            例２：僕は&lt;em&gt;100点を&lt;/em&gt;とった。<br>
+            この場合、100点をとったのがうれしいのかなぁって感じになる。
+        </dd>
+        <dt>&lt;strong&gt;</dt>
+        <dd>
+            文章の重要な箇所につける。そのまま出力すると太文字になる。<br>
+            文章の意味もニュアンスも変わらないが、重要だということがコンピューターに伝わる。<br>
+            例：&lt;strong&gt;酸性タイプの製品と一緒に使う（まぜる）と有害な塩素ガスが出て危険&lt;/strong&gt;
+        </dd>
+    </dl>
+
+    <h2 id="6">箇条書き</h2>
+    <dl>
+        <dt>&lt;li&gt;</dt>
+        <dd>箇条書きの➀や・に当たるもの。</dd>
+        <dt>&lt;ul&gt;</dt>
+        <dd>これから順不同型の箇条書きを書きますよという宣言</dd>
+        <dt>&lt;ol&gt;</dt>
+        <dd>これから番号順の箇条書きを書きますよという宣言</dd>
+    </dl>
+    <p>
+        （使用例）<br>
+        &lt;ul&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;HOME&lt;/lt&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;ACCESS&lt;/lt&gt;<br>
+        &nbsp;&nbsp;…<br>
+        &lt;/ul&gt;<br>
+        ↓こうすると<br>
+        ・HOME<br>
+        ・ACCESS<br>
+        …<br>
+        というようになる。<br>
+        ulをolに変えると➀➁となり、手順を表すときなどに使える。
+    </p>
+
+    <h2 id="7">用語説明リスト</h2>
+    <p>
+        &lt;dl&gt;<br>
+        &nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;←用語<br>
+        &nbsp;&nbsp;&lt;dd&gt;Webサイトの～～&lt;/dd&gt;←説明<br>
+        &nbsp;&nbsp;…<br>
+        &lt;/dl&gt;<br>
+        という感じで記述すると<br>
+        HTML<br>
+        &nbsp;&nbsp;Webサイトの～～<br>
+        &nbsp;&nbsp;…<br>
+        という感じになる。<br>
+        何かしらを説明するときに使う。<br>
+        このサイトも多用している。<br>
+        dtの子要素には一部配置できない要素があるので、上手くいかないときはググろう。
+    </p>
+
+    <h2 id="8">絶対パスと相対パス</h2>
+    <dl>
+        <dt>絶対パス</dt>
+        <dd>住所のようなもの。主にURLのこと。</dd>
+        <dt>相対パス</dt>
+        <dd>
+            道順のようなもの。記述方法は以下の通り。<br>
+            []はファイル、.htmlはフォルダとする。<br>
+            <img src="相対パス用.png" alt="ごめんミスってます" width="490" height="296"><br>
+            というようにファイルがあるとする。<br>
+            フォルダを開くときはフォルダ名をそのまま。<br>
+            ファイルの中に入る時はファイル名の後に「/」を入れる。<br>
+            ファイルから出るときは「../」を入れる。<br>
+            この3つのルールで相対パスは記述する。<br>
+            index.htmlからa.htmlまでの相対パスはa.htmlと記述すればOK。<br>
+            index.htmlからb.htmlまでの相対パスはB/b.htmlになる。<br>
+            b.htmlからindex.htmlへの相対パスは../index.htmlとなる。<br>
+            b.htmlからc.htmlへの相対パスは../C/c.htmlとなる。<br>
+        </dd>
+    </dl>
+
+    <h2 id="9">ハイパーリンク</h2>
+    <p>
+        文字や画像をクリックすると任意のファイルを開くことができる。
+    </p>
+    <dl>
+        <dt>&lt;a href"開きたいファイルへのパス"&gt;</dt>
+        <dd>ハイパーリンクの基本形。hrefは属性だが、基本セットなのでセットで覚える。</dd>
+        <dt>brank</dt>
+        <dd>a要素の属性。新しいウィンドウで表示できる。</dd>
+        <dt>ページ内リンク</dt>
+        <dd>
+            このページの<a href="#もくじ">もくじ</a>のような感じでページ内の任意の場所に移動できる。<br>
+            開きたい箇所にid="～～"という感じでid属性を配置し、hrefの属性値に「#～～」とするとページ内リンクができる。
+        </dd>
+    </dl>
+
+    <h2 id="10">画像</h2>
+    &lt;img&gt;で挿入できる。<br>
+    <h3>属性</h3>
+    <dl>
+        <dt>src</dt>
+        <dd>必須属性。属性値に表示したい画像のパスを書く。</dd>
+        <dt>alt</dt>
+        <dd>表示できない場合に表示するテキスト</dd>
+        <dt>wedth、height</dt>
+        <dd>wedthで横幅、heightで高さを指定する。この二つで大きさを指定すると処理が少し速くなる。</dd>
+    </dl>
+
+    <h2 id="11">表</h2>
+    <p>
+    &lt;table&gt;<br>
+    &nbsp;&nbsp;&lt;tr&gt;行<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;見出し１&lt;/th&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;見出し２&lt;/th&gt;<br>
+    &nbsp;&nbsp;&lt;/tr&gt;<br>
+    &nbsp;&nbsp;&lt;tr&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;内容１&lt;/td&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;内容２&lt;/td&gt;<br>
+    &nbsp;&nbsp;&lt;/tr&gt;<br>
+    &nbsp;&nbsp;&lt;tr&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;内容３&lt;/td&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;内容４&lt;/td&gt;<br>
+    &nbsp;&nbsp;&lt;/tr&gt;<br>
+    &lt;/table&gt;<br>
+    とすると、
+    <table>
+        <tr>
+            <th>見出し１</th>
+            <th>見出し２</th>
+        </tr>
+        <tr>
+            <td>内容１</td>
+            <td>内容２</td>
+        </tr>
+        <tr>
+            <td>内容３</td>
+            <td>内容４</td>
+        </tr>
+    </table>
+    というように表示される。<br>
+    罫線を入れたければborder属性を配置する。
+    </p>
+    <dl>
+        <dt>&lt;thead&gt;</dt>
+        <dd>
+            表の見出しだということがコンピューターに教えられる。<br>
+            スクロールしないと全て見ることができない大きさの表の場合、表を印刷するときにこの見出しが一番上に表示された状態で表示される。
+        </dd>
+        <dt>&lt;tbody&gt;</dt>
+        <dd>表の内容部分だよとコンピューターに教えられる。</dd>
+        <dt>&lt;tfoot&gt;</dt>
+        <dd>表の一番下だということをコンピューターに教えられる。theadのように印刷するときに一番下に表示されて状態で印刷される。</dd>
+    </dl>
+    <p>table要素の子要素の順番は決まっている。順番は以下の通り。</p>
+    <ol>
+        <li>任意で一つのthead要素</li>
+        <li>一つのtbody要素か、一つ以上のtr要素</li>
+        <li>任意で一つのtfoot要素</li>
+    </ol>
+
+    <h2 id="12">フォーム</h2>
+    <dl>
+        <dt>&lt;form&gt;</dt>
+        <dd>
+            ファイル内に入力フォームをつくれる。<br>
+            <h3>属性</h3>
+            <dl>
+                <dt>action</dt>
+                <dd>属性値を送信先のパスにすることで送信先を指定できる。</dd>
+                <dt>method</dt>
+                <dd>
+                    送信方法をしていできる。<br>
+                    属性値には"get"と"post"の2種類。<br>
+                    getにするとURLを見れば入力した内容がわかる状態で送信する。<br>
+                    postにすると内容がバレないように送信できる。
+                </dd>
+            </dl>
+        </dd>
+        <dt>&lt;input&gt;</dt>
+        <dd>
+            フォームの内容を宣言する要素。
+            <h3>属性</h3>
+            <dl>
+                <dt>type</dt>
+                <dd>
+                    フォームを作るための部品。<br>
+                    属性値は以下の通り。
+                    <dl>
+                        <dt>text</dt>
+                        <dd>
+                            テキスト1行分の入力フォームができる。<br>
+                            <input type="text">
+                            ↑こんな感じ<br>
+                        </dd>
+                        <dt>password</dt>
+                        <dd>
+                            textの文字が伏せられるバージョン。<br>
+                            <input type="password"></form><br>
+                            ↑こんな感じ
+                        </dd>
+                        <dt>radio</dt>
+                        <dd>
+                            一つだけしか選択できないチェックボックス。<br>
+                                <input type="radio" name="gender" value="男">男
+                                <input type="radio" name="gender" value="女">女<br>
+                            ↑こんな感じ
+                        </dd>
+                        <dt>checkbox</dt>
+                        <dd>
+                            複数選択可のチェックボックス。<br>
+                            <input type="checkbox" name="lang" value="javascript">javascript
+                            <input type="checkbox" name="lang" value="PHP">PHP
+                            <input type="checkbox" name="lang" value="java">java
+                            <input type="checkbox" name="lang" value="python">python<br>
+                            ↑こんな感じ
+                        </dd>
+                        <dt>submit</dt>
+                        <dd>
+                            送信ボタン。<br>
+                            <input type="submit" value="送信"><br>
+                            ↑こんな感じ
+                        </dd>
+                    </dl>
+                </dd>
+                <dt>name</dt>
+                <dd>
+                    部品の名前を決める。<br>
+                    radioやcheckboxを複数個つくり、同じ名前にするとそれらは同じ質問ということになる。
+                </dd>
+                <dt>value</dt>
+                <dd>
+                    部品の種類によって機能が変わる。<br>
+                    textの場合、初期値がフォームに入力されている初期値を設定できる。
+                    <input type="text" value="こんな感じ"><br>
+                    checkboxやradioの場合、チェックボックスにチェックが入った状態で送信した時に送信する内容を設定できる。<br>
+                    チェックボックスは自身にチェックが入っているかどうかしかわかっていないため、送信する内容を設定する必要がある。<br>
+                    submitの場合、ボタンに表示するテキストを設定できる。上の送信ボタンの場合、属性値に「送信」と設定してある。
+                </dd>
+            </dl>
+        </dd>
+        <dt>&lt;textarea&gt;</dt>
+        <dd>
+            複数行のテキスト入力フォーム。何も記述せずに閉じてOK。記述したテキストは初期値となる。
+            <h3>属性</h3>
+            <dl>
+                <dt>name</dt>
+                <dd>
+                    inputのnameと使い方は同じ。
+                </dd>
+                <dt>cols</dt>
+                <dd>
+                    1行の文字数を指定する。ただし、ブラウザによって変わるため大体の目安と考えると良い。
+                </dd>
+                <dt>rows</dt>
+                <dd>
+                    表示できる行数を指定する。ただし、記入できる文字数は無制限。表示しきれない文字数の場合、スクロールできるようになる。
+                </dd>
+            </dl>
+        </dd>
+        <dt>&lt;select&gt;</dt>
+        <dd>
+            選択肢の多い場合に使用することの多い選択項目の表示方法。<br>
+            <select name="主要都市">
+                <option value="東京">東京</option>
+                <option value="大阪">大阪</option>
+                <option value="名古屋">名古屋</option>
+                <option value="福岡">福岡</option>
+            </select><br>
+            ↑こんな感じ
+        </dd>
+        <dt>option</dt>
+        <dd>
+            selectの選択肢を設定する要素。selectの子要素として使用する。
+        </dd>
+        <dt>&lt;label&gt;</dt>
+        <dd>
+            テキストをクリックするとフォームの部品をクリックしたことにすることにできる。<br>
+            <label><input type="checkbox">HTMLでの実務経験がある。</label><br>
+            <label><input type="checkbox">HTMLでホームページを作成したことがある。</label><br>
+            <label><input type="checkbox">HTMLを学んでいる。</label><br>
+            ↑こんな感じ<br>
+            使い方は2種類。<br>
+                <dl>
+                    <dt>使い方１</dt>
+                    <dd>
+                        &lt;label&gt;お名前：&lt;input type="text"&gt;&lt;/label&gt;
+                    </dd>
+                    <dt>使い方２</dt>
+                    <dd>
+                        &lt;label for="your_name"&gt;お名前：&lt;/label&gt;<br>
+                        &lt;input type="text" name="your_name" id="your_name"&gt;<br>
+                        ↑こちらはテキストとフォームが離れている場合にも使用可能。
+                    </dd>
+                </dl>
+        </dd>
+    </dl>
+</body>
+</html>
