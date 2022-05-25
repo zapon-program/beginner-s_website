@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>css基礎知識まとめ</title>
+    <link rel="stylesheet" href="cssmatome.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="プログラミング初心者が学んだ知識を使って作ったページです。ここにある知識を学べばこのページくらいのデザインのサイトが書けるようになります。" />
+</head>
+<body>
+    <div id="absolute">
+        <a href="../index.html">
+        <div id="minititle">
+            <img src="初心者マーク.png" alt="ごめんミスってる">
+            <p>プログラミング初心者が<br>徐々に進化させていくサイト</p>
+        </div>
+        </a>
+        <nav id="mokuji">
+            もくじ
+            <ul>
+                <li><a href="#css">CSSとは</a></li>
+                <li><a href="#commentout">コメントアウト</a></li>
+                <li><a href="#grammar">基本文法</a></li>
+                <li><a href="#reset">CSSのリセット</a></li>
+                <li><a href="#serecter">セレクタの指定方法</a></li>
+                <li><a href="#property">重要プロパティ</a></li>
+                <li><a href="#cascade">カスケード</a></li>
+                <li><a href="#inheritance">継承</a></li>
+                <li><a href="#reference">参考にした主なwebサイトなど</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <img src="初心者マーク.png" alt="ごめんミスってる">
+        <h1><a href="../index.html">プログラミング初心者が徐々に進化させていくサイト</a></h1>
+        <img src="初心者マーク.png">
+    </header>
+    <div class="nidannme">
+        <main>
+            <p id="pankuzu"><a href="index.html">ホーム</a>&gt;</p>
+            <h1>CSS基礎知識まとめ</h1>
+            <p>
+                HTML/CSS初心者が今まで学んだことを学んだことを使ってまとめてみました。<br>
+                ここに書かれている知識があればこのサイトくらいのデザインはできるようになります。<br>
+                これら以外にもいろいろ調べながら作りました。<br>
+                メモをほぼそのまま写しただけなので、わかりにくいところがあればググってください。<br>
+            </p>
+            <div id="css">
+                <h2>
+                    CSSとは
+                </h2>
+                <p>
+                    CSSとは、HTMLで作成した文章のレイアウトや装飾をするものです。<br>
+                    カスケーディング・スタイル・シートを略してCSSと言います。<br>
+                    CSSでHTMLのみでサイトを作ると<a href="matome.html" target="_blank">このサイト</a>のような感じになります。このサイトは私がHTMLを勉強したときに作ったものです。
+            </p>
+            </div>
+            <div id="commentout">
+                <h2>
+                    コメントアウト
+                </h2>
+                <p>
+                    CSSでコメントアウトするには、<br>
+                    /*コメント*/<br>
+                    と記述しましょう。<br>
+                    コメントアウトすると、その行はコンピューターが読み込みません。主にあとで複雑な箇所を見て、「あれ、ここなにしてるんだっけ？」とならないようにメモを残すのに使われます。
+                </p>
+            </div>
+            <div id="grammar">
+                <h2>
+                    基本文法
+                </h2>
+                <p>
+                    <img src="css文法１.png" alt="ごめんミスってる" weight="" height=""><br>
+                    これがCSSの基本的な文法です。<br>
+                    「（セレクタ）の（プロパティ）を（値）にする」ということになります。
+                    例）h3{color: #000;}→&nbsp;h3のcolorを#000（黒）にする。<br>
+                    値の後に「;」をいれるようにしましょう。<br>
+                    セレクタの指定方法は<a href="#serecter">こちらに</a>。
+                </p>
+            </div>
+            <div id="reset">
+                <h2>
+                    CSSのリセット
+                </h2>
+                <p>
+                    各ブラウザはそれぞれ固有のスタイルを持っているため、それを初期化するとブラウザごとの差異が少なくなります。<br>
+                    そのために、head部分でリセットCSSというものを読み込むようにするといいらしいです。<br>
+                    CSSリセットは自分で書くのは大変なので、ググってコピペしましょう。
+                </p>
+            </div>
+            <div id="serecter">
+                <h2>
+                    セレクタの指定方法
+                </h2>
+                <p id="simple">
+                    セレクタの指定方法は主に以下の３種類があります。以下の３種類をシンプルセレクタと言います。<br>
+                </p>
+                <dl>
+                    <dt>タグ名で指定する</dt>
+                    <dd>
+                        例）p{~~}
+                    </dd>
+                    <dt>idで指定する</dt>
+                    <dd>
+                        例）#id名{~~}
+                    </dd>
+                    <dt>class名で指定する</dt>
+                    <dd>
+                        例）.class名{~~}
+                    </dd>
+                </dl>
+                <h3>セレクタの指定方法＜応用編＞</h3>
+                <dl>
+                    <dt>絞り込み指定</dt>
+                    <dd>
+                        指定したいセレクタ同士の間にスペースを入れるとセレクタを絞り込み指定することができます。<br>
+                        例）.main p span{~~} ←mainクラスの中のp要素の中のspan要素
+                    </dd>
+                    <dt>複数指定</dt>
+                    <dd>
+                        指定したいセレクタ同士の間に「,」を入れると複数のセレクタを指定することができます。<br>
+                        例）#headline,h2{~~}
+                    </dd>
+                    <dt>部分一致選択</dt>
+                    <dd>
+                        指定したテキストがテキストのはじめ（おわり）に含まれている文字列を指定できます。<br>
+                        例1）a[href^="https://"]&nbsp;← https:// で始まる属性値のhref属性を持ったaタグを指定できる<br>
+                        例2）a[href$="https://"]&nbsp;← https:// で終わる属性値のhref属性を持ったaタグを指定できる<br>
+                    </dd>
+                    <dt>疑似クラス</dt>
+                    <dd>
+                        <dl>
+                            <dt>ｎ番目の要素</dt>
+                            <dd>
+                                兄弟要素の中でｎ番目の要素を指定できます。<br>
+                                <dl>
+                                    <dt>first</dt>
+                                    <dd>
+                                        &lt;ariticle p: first-of-type;&gt; ← articleタグの中の最初のpタグが指定される<br>
+                                        &lt;ariticle p: first-child;&gt; ← articleタグの中の最初の要素がpタグだった時、指定される        
+                                    </dd>
+                                    <dt>last</dt> 
+                                    <dd>
+                                        &lt;ariticle p: last-of-type;&gt; ← articleタグの中の最後のpタグが指定される<br>
+                                        &lt;ariticle p: last-child;&gt; ← articleタグの中の最後の要素がpタグだった時、指定される        
+                                    </dd>
+                                    <dt>nth</dt>
+                                    <dd>
+                                        &lt;ariticle p: nth-of-type(n);&gt; ← articleタグの中のn番目のpタグが指定される<br>
+                                        &lt;ariticle p: nth-child(n);&gt; ← articleタグの中のn番目の要素がpタグだった時、指定される        
+
+                                    </dd>
+                                </dl>
+                            </dd>
+                            <dt>:not</dt>
+                            <dd>
+                                指定した要素以外の要素が指定されます。
+                                例）:not(ariticle p: first-of-type;) ← articleタグの中のn番目のpタグ以外が指定される
+                            </dd>
+                            <dt>:hover</dt>
+                            <dd>
+                                カーソルを合わせたものが選択されます。<br>
+                                画面左のもくじのもくじみたいな感じです。
+                            </dd>
+                            <dt>::after（before）</dt>
+                            <dd>
+                                セレクタの後（前）に何か付けられます。
+                            </dd>
+                            <dt>::first-line（letter）</dt>
+                            <dd>
+                                最初の行（文字）が選択される
+                            </dd>
+                        </dl>
+                        <dt>結合子</dt>
+                        <dd>
+                            <a href="#simple">シンプルセレクタ</a>を組み合わせて指定する方法
+                            <dl>
+                                <dt>子孫セレクタ</dt>
+                                <dd>
+                                    <a href="#siborikomi">絞り込み指定</a>のこと
+                                </dd>
+                                <dt>子セレクタ</dt>
+                                <dd>
+                                    <h4>A>B</h4>
+                                    Aタグ直下のBタグのみ指定できます。
+                                </dd>
+                                <dt>隣接セレクタ</dt>
+                                <dd>
+                                    <h4>A+B</h4>
+                                    Aの次以降のBが指定できます。
+                                </dd>
+                                <dt>間接セレクタ</dt>
+                                <dd>
+                                    <h4>A~B</h4>
+                                    A以降のBが指定できます。
+                                </dd>
+                            </dl>
+                        </dd>
+                    </dd>
+                </dl>
+            </div>
+            <div id="property">
+                <h2>重要プロパティ</h2>
+                <p>よく使われる重要なプロパティらしいです。</p>
+                <dl>
+                    <dt>font-size</dt>
+                    <dd>
+                        <p>
+                            文字サイズを指定するプロパティです。
+                        </p>
+                        <h4>プロパティ値</h4>
+                        <dl>
+                            <dt>px</dt>
+                            <dd>デジタル画像の最小単位のことです。</dd>
+                            <dt>em</dt>
+                            <dd>現在のフォントサイズに対する倍率です。<br></dd>
+                        </dl>
+                    </dd>
+                    <dt>color</dt>
+                    <dd>
+                        <p>選択した要素の色（主に文字の）を指定できます。</p>
+                        <h4>プロパティ値</h4>
+                        <dl>
+                            <dt>色名</dt>
+                            <dd>色の名前をそのまま入力するパターン。<br>
+                            例）red、blue、pink…</dd>
+                            <dt>カラーコード</dt>
+                            <dd>色に数値で名前を付けたもの。色名よりもこまかく色を指定できる。<br>
+                            どんなものがあるかはググってください。<br>
+                            例）#000000は黒<br>
+                            <h4>カラーピッカー</h4>
+                            視覚的、直感的に色のカラーコードを指定できるものです。私が使っているvisual studio codeには標準で搭載されています。<br>
+                            <img src="カラーピッカー.png" alt="ごめんミスってる"><br>
+                            ↑こんな感じのものです。便利なので、ガンガン使いましょう。
+                            </dd>
+                        </dl>
+                        </dd>
+                    <dt>text-align</dt>
+                    <dd>
+                        <p>文字を中央や左右に寄せることができます。<br>
+                        プロパティ値はcenter、right、leftの3種類で、それぞれ中央、右、左に寄せられます。</p>
+                    </dd>
+                    <dt>background-color</dt>
+                    <dd>
+                        <p>選択した要素の背景色を指定できます。プロパティ値はcolorと一緒です。</p>
+                    </dd>
+                    <dt>border</dt>
+                    <dd>
+                        要素の周りに線を引くことができます。また、borderのあとに-top、-bottom、-left、-rightをつけると、それぞれ上、下、左、右のみに個別で線を引くことができます。<br>
+                        <h4>プロパティ値</h4>
+                        <p>プロパティ値は線の太さ、色、線の種類の３つです。<br>
+                        線の太さはpxで、色はcolorと同じように、線の種類は下の表の通りに指定します。<br>
+                        <ul>
+                            <li>solid…実線</li>
+                            <li>dotted…点線</li>
+                            <li>dashed…破線</li>
+                            <li>doubli…二重線</li>
+                        </ul>
+                    </dd>
+                    <dt>width,height</dt>
+                    <dd>
+                        <p>widthは要素の横幅、heightは要素の高さを指定できます。</p>
+                        <h4>プロパティ値</h4>
+                        <dl>
+                            <dt>auto</dt>
+                            <dd>初期値になる。</dd>
+                            <dt>○○px</dt>
+                            <dd>pxで指定する方法。</dd>
+                            <dt>○○%</dt>
+                            <dd>親要素の大きさに対する割合で指定する方法。</dd>
+                            <dt>calc(計算式)</dt>
+                            <dd>計算式の部分は例えば100%/3と入力すると画面の3分の1の大きさになる。</dd>
+                        </dl>
+                    </dd>
+                    <dt>min-width,max-width</dt>
+                    <dd>
+                        横幅の最小、最大を指定できます。<br>
+                        「width:○○pxはPCだとちょうどいいけどスマホだと大きすぎる！」といったときにmin-width:○○%というようにすると、○○%より小さくならなくなる。<br>
+                        また、画像のプロパティをwidth:100& height:autoとすると、縦横の比は保たれたまま画像の拡大縮小ができる。
+                    </dd>
+                    <dt>display</dt>
+                    <dd>
+                        要素の配置を指定できます。<br>
+                        以下displayのプロパティ値です。可、不可は指定可能かどうかを表しています。
+                        <dl>
+                            <dt>block</dt>
+                            <dd>
+                                通常の表示形式。要素が横いっぱいに広がり、縦に並べられる。<br>
+                                width,height…可<br>
+                                margin,padding…可<br>
+                                text-align,vertical-align…不可<br>
+                            </dd>
+                            <dt>inline</dt>
+                            <dd>
+                                要素が横に均等に並べられる。<br>
+                                width,height…不可
+                                margin,padding…左右のみ可
+                                text-align,vertical-align…可
+                            </dd>
+                            <dt>inline-block</dt>
+                            <dd>
+                                要素は横に並べられるが、要素の中身は縦に並べられる。
+                                width,height…可
+                                margin,padding…可
+                                text-align,vertical-align…可
+                            </dd>
+                            <dt>none</dt>
+                            <dd>非表示になる。</dd>
+                            <dt>flex</dt>
+                            <dd>
+                                flexboxというレイアウト用のモジュールです。<br>
+                                非常に覚えることが多いことや、レイアウト用モジュールには流行り廃りがあるとのことでしたので、ここでは詳しくは紹介しません。<br>
+                                <a href="https://webdesign-trends.net/entry/8148">こちらのサイト</a>で非常にわかりやすく紹介されているので、気になる方はどうぞ。
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>余白</dt>
+                    <dd>
+                        marginとpaddingの2種類があります。widthとheightで骨を作り、paddingで肉を付け、marginで気を纏うイメージと勝手に思っています。<br>
+                        例えばセレクタに色を付けるとpaddingには色が付くが、marginには色はつかないという感じです。<br>
+                        <img src="margin,padding.png" alt="ごめんミスってる"><br>
+                        上下左右のみに余白を付けたいときは、それぞれのプロパティのあとに-top,bottom,left,rightをつけることで付けられます。<br>
+                        上下左右をばらばらでそれぞれ指定したいときは、margin:10px 15px 20px 0pxのように記述しましょう。（上から時計回り）<br>
+                        %で指定した場合は親要素に対しての割合になります。<br>
+                        borderははみ出してしまうため、一緒に使いたい場合はbox-styleを使ってください。<br>
+                        marginが2つ重なると相殺されて大きい方だけの余白になります。<br>
+                        margin-right:auto; margin-left:auto;にすると左右の余白が同じになります。（marginのみ、左右のみ）
+                    </dd>
+                    <dt>フォント</dt>
+                    <dd>
+                        font-familyで指定できる。<br>
+                        OSによって対応していないフォントがあるので、プロパティ値を複数選択できるようになっています。複数選択した場合、左に記述したものから優先的に表示されます。英語のフォントから書くと、英語は英語のフォント、日本語は日本語のフォントになります。（日本語のフォントは英語にも対応していることがあるため。）<br>
+                        総称フォントファミリー…どのフォントにもOSが対応していない場合、最低限こういうフォントで表示するという指定をできます。以下一覧。<br>
+                        <ul>
+                            <li>ゴシック体…sans-serif</li>
+                            <li>明朝体…serif</li>
+                            <li>等幅系…monospace</li>
+                            <li>筆記体系…cursive</li>
+                            <li>装飾系…fantasy</li>
+                        </ul>
+                        フォントまとめサイトがあるので、ググってみてください。<br>
+                        ※androidはDroid SansとRobotoの二種類しかありません。どちらもゴシック体です。<br>
+                        google fontなどのwebフォントもあるので、見ておくとよさそうです。
+                    </dd>
+                    <dt>太字にする。</dt>
+                    <dd>font-weight: boldで<span style="font-weight:bold">太字</span>にできます。</dd>
+                    <dt>斜体にする。</dt>
+                    <dd>font-style: italicで斜体<span style="font-style:italic">(shatai)</span>にできます。</dd>
+                    <dt>行間を変える。</dt>
+                    <dd>line-height: 値で調整できる。</dd>
+                    <dt>字間</dt>
+                    <dd>letter-spacing: ~emで調整できます。1emで1文字分の字間が開けられます。</dd>
+                    <dt>下線</dt>
+                    <dd>
+                        様々な下線の引き方があります。以下例です。<br>
+                        <ul>
+                            <li>普通の下線…text-decoration: underline, border-bottom: solid</li>
+                            <li>点線…borderbottom: dotted</li>
+                            <li>破線…border-bottom: dashed</li>
+                            <li>二重線…border-bottom: double</li>
+                            <li>蛍光マーカー風…background: liner-gradient(transparent 50%,色 50% ←%の部分をどちらも0にすると文字全体にマーカーになる。</li>
+                        </ul>
+                    </dd>
+                    <dt>取り消し線</dt>
+                    <dd>text-decoration:line-throughで取り消し線が引けます。</dd>
+                    <dt>一部の文字だけ設定を変える。</dt>
+                    <dd>
+                        &lt;span style="設定"&gt;~&lt;/span&gt;もしくは<br>
+                        &lt;span class"##">~&lt;/span&gt;→指定したclassに設定で変えられる。
+                    </dd>
+                    <dt>position</dt>
+                    <dd>
+                        他の要素の位置を無視して要素を配置することができます。<br>
+                        要素の位置を固定したり、常に画面に表示しておいたりすることができるものです。<br>
+                        <h4>関連プロパティ</h4>
+                        <p>positionを理解するには関連するプロパティを知ってからの方が理解しやすいと思うので、先に関連プロパティを紹介します。</p>
+                        <dl>
+                            <dt>top,bottom,left,right</dt>
+                            <dd>それぞれpositionで上下左右どこに配置するかどうかを指定するためのものです。pxと%で指定します。</dd>
+                            <dt>z-index</dt>
+                            <dd>positionで調整して重なる要素の順番を指定するためのプロパティです。プロパティ値には数字を記述し、プロパティ値が大きい要素ほど前面に配置されます。</dd>
+                        </dl>
+                        <h4>プロパティ値</h4>
+                        <dl>
+                            <dt>static</dt>
+                            <dd>
+                                デフォルトで設定されているものです。要素の位置を指定することはできません。通常の位置に要素が配置されます。
+                            </dd>
+                            <dt>relative</dt>
+                            <dd>
+                                本来表示される位置からどれだけ動かすかを指定します。
+                                staticと違い、topなどを使って要素の位置を指定できます。
+                            </dd>
+                            <dt>absolute</dt>
+                            <dd>
+                                親要素の左上からどれだけ動かすかを指定します。親要素をrelativeにしておかないと上手くいかないことがあるようです。
+                            </dd>
+                            <dt>fixed</dt>
+                            <dd>
+                                画面の任意の場所に固定することができます。このページの左側のものはfixedで固定されています。
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </div>
+            <div id="cascade">
+                <h2>カスケード</h2>
+                <p>
+                    同じ要素に複数のスタイルがかけられ、競合してしまうことあります。そういう場合、どのスタイルが優先されるかという決まりを、「カスケード」といいます。<br>
+                    その処理は以下の順番で行われます。<br>
+                    1. CSSの提供元による優先順位<br>
+                    2. 詳細度による優先順位<br>
+                    3. 記述順位による優先順位<br>
+                    スタイルの変更がうまくいかない場合、これらの優先順位が問題になっていることが多いそうです。<br>
+                    それぞれに関して以下に説明します。<br>
+                </p>
+                <dl>
+                    <dt>CSSの提供元による優先順位</dt>
+                    <dd>
+                        1. !important付きのユーザスタイルシート（ユーザが用意したスタイルシート）<br>
+                        2. !important付きの製作者スタイルシート（製作者が用意したスタイルシート）<br>
+                        3. 製作者スタイルシート<br>
+                        4. ユーザスタイルシート<br>
+                        5. ブラウザスタイルシート
+                    </dd>
+                    <dt>詳細度による優先順位</dt>
+                    <dd>
+                        セレクタの重要度のようなものを点数化して、高得点のものほど優先されます。
+                        以下点数表です。
+                        <table border="1">
+                            <tr>
+                                <th>セレクタ</th>
+                                <td>inlineスタイル</td>
+                                <td>IDセレクタ</td>
+                                <td>クラスセレクタ</td>
+                                <td>属性セレクタ</td>
+                                <td>疑似クラス</td>
+                                <td>要素型セレクタ</td>
+                                <td>疑似要素</td>
+                                <td>全称セレクタ(*)</td>
+                            </tr>
+                            <tr>
+                                <th>点数</th>
+                                <td>1000</td>
+                                <td>100</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                        計算方法<br>
+                        <table border="1">
+                            <tr>
+                                <th>記述例</th>
+                                <td>div.content.demo</td>
+                                <td>div[lang="ja"]</td>
+                                <td>a:link</td>
+                            </tr>
+                            <tr>
+                                <th>計算</th>
+                                <td>1（要素型セレクタ）+10（クラスセレクタ）+10（クラスセレクタ）</td>
+                                <td>1（要素型セレクタ）+10（属性セレクタ）</td>
+                                <td>1（要素型セレクタ）+10（疑似クラス）</td>
+                            </tr>
+                        </table>
+                    </dd>
+                    <dt>記述順位による優先順位</dt>
+                    <dd>単純に後ろに記述されたものが優先されます。</dd>
+                </dl>
+            </div>
+            <div id="inheritance">
+                <h2>継承</h2>
+                <p>
+                    親要素から子要素にプロパティを引き継ぐことです。プロパティ値に以下のものを記述すると継承ができます。<br>
+                    inherit … 親要素のプロパティを引き継ぐ。<br>
+                    initial … タグの何も設定していないときのプロパティ値になる。<br>
+                    unset … inheritかinitialになる。inheritが優先。
+                </p>
+            </div>
+            <div id="reference">
+                <h2>参考にした主なwebサイトなど</h2>
+                <p>
+                    <a target="_blank" href="https://saruwakakun.com/">サルワカ</a><br>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCti6dG0zSAetLGGYcgNML4Q">しまぶーのIT大学</a><br>
+                    <a target="_blank" href="https://www.tohoho-web.com/www.htm">とほほのWWW入門</a><br>
+                    他にも、都度わからないものがあればググっていろいろなサイトを参考にさせていただきました。
+                </p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>
+            twitter ID … <a href="https://twitter.com/zapon_program">@zapon_program</a><br>
+            初めて作ったやつ … <a href="test.html">ここ</a><br>
+            HTMLを学んでHTMLで作ったやつ … <a href="html/htmlmatome.html">ここ</a>
+        </p>
+    </footer>
+</body>
+</html>

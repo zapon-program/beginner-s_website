@@ -1,0 +1,136 @@
+/*matommeは選択したものに色付ける*/
+
+/*リセット*/
+*,*::before,*::after{box-sizing:border-box}*{margin:0}html,body{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
+
+body{
+    background-color:#dcff9f;
+    display: block;
+}
+header{
+    display:flex;
+    background-color: #dcff9f;
+    width:100%;
+    position:absolute;
+    top:0;
+    z-index:2;
+}
+header img{
+    width:90px;
+    height:90px;
+}
+header h1{
+    padding:30px;
+}
+header h1 a{
+    text-decoration: none;
+    color:black;
+}
+#minititle {
+    display: flex;
+    width:200px;
+    height:100px;
+    position:fixed;
+    top:10px;
+    left:10px;
+}
+#minititle p a{
+    text-decoration: none;
+    color:black;
+
+}
+#minititle img{
+    width: 80px;
+    height: 80px;
+}
+#minititle p{
+    font-size: 0.8em;
+    font-weight: bold;
+}
+nav{
+    background-color: white;
+    margin-right:10px;
+    margin-left:10px;
+    width:200px;
+    height:auto;
+    padding:10px;
+    position:fixed;
+    top:108px;
+    left:0;
+}
+nav ul li{
+    width:150px;
+}
+nav ul li:hover{
+    background-color: #ecffcd;
+}
+main{
+    background-color: white;
+    padding:0 10px 10px 10px;
+    margin-top:100px;
+    margin-right:10px;
+}
+h2{
+    background-color: #F9FFA4;
+    border-left: 10px solid #FFD59E;
+    padding:10px;
+    margin:100px 10px 10px 10px;
+    display: inline-block;
+}
+main h1{
+    padding:20px;
+    margin:10px;
+    background-color:#F9FFA4;
+}
+.nidannme{
+    display:flex;
+    margin-top: 10px;
+    margin-left:220px;
+    z-index:0;
+}
+div>dl>dt{
+    background: linear-gradient(transparent 60%, #FFA1A1 40%);
+    display:inline-block;
+    margin-top:40px;
+    font-weight: bold;
+}
+img{
+    max-width: 90%;
+    height: auto;
+}
+p{
+    margin:10px
+}
+h3{
+    margin-top:50px;
+    font-size:1.5em;
+    display: inline-block;
+    border-left:#FFA1A1 solid 5px;
+    background-color: #f7d57a;
+}
+h4{
+    margin-top:20px;
+}
+/*table*/
+table {
+    border-collapse:  collapse;
+    margin-bottom:10px;
+    width:100%;
+    table-layout: fixed;
+}
+th{
+    width:90px;
+}
+th,td{
+    padding:5px;
+}
+dl dd dl{
+    margin-left:15px;
+}
+dl dd dl dt{
+    margin-top: 10px;
+    font-weight: bold;
+}
+dl dd dl dd{
+    margin-left: 20px;
+}
